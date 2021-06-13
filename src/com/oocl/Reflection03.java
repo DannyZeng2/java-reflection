@@ -1,7 +1,6 @@
 package com.oocl;
 
 import java.lang.reflect.Field;
-import java.util.Arrays;
 
 public class Reflection03 {
 
