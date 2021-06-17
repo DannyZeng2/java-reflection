@@ -2,7 +2,10 @@ package com.oocl;
 
 import java.lang.reflect.Method;
 
-public class Reflection02 {
+/**
+ * 传统方式和反射调用方法的效率比较
+ */
+public class D02_EfficiencyComparison {
     public static void main(String[] args) throws Exception {
         m1();
         m2();

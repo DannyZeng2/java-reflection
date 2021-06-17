@@ -2,7 +2,10 @@ package com.oocl;
 
 import java.lang.reflect.Field;
 
-public class Reflection03 {
+/**
+ * class类的常用方法
+ */
+public class D03_Method {
 
     public static void main(String[] args) throws Exception {
         String classFullName = "com.oocl.Cat";

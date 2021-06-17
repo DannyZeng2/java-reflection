@@ -1,6 +1,9 @@
 package com.oocl;
 
-public class Reflection04 {
+/**
+ * 创建class的六种方式
+ */
+public class D04_CreateClass{
 
     public static void main(String[] args) throws Exception {
         // 1. Class.forName() 应用场景：多用于配置文件

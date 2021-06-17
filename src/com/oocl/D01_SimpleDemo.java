@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Properties;
 
-public class Reflection01 {
+public class D01_SimpleDemo {
 
     public static void main(String[] args) throws Exception {
 
