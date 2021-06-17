@@ -23,10 +23,13 @@ public class D05_ClassInfoDetail {
             System.out.println(field.getName());
         }
         // 获取本类所有字段
-        System.out.println("4. 本类所有字段:");
+        // getModifiers 可以获取修饰符：0-默认 1-public 2-private 4-protected 8-static 16-final
+        // 例如 public static final = 1+8+16 = 25
+        // getType 获取字段类型
+        System.out.println("4. 本类所有字段(权限修饰符-类型-字段名):");
         Field[] allFields = personCls.getDeclaredFields();
         for (Field field : allFields) {
-            System.out.println(field.getName());
+            System.out.println(field.getModifiers()+"-"+field.getType()+"-"+field.getName());
         }
         // 获取public修饰的方法，包括本类和父类
         System.out.println("5. public修饰的方法:");
@@ -35,10 +38,17 @@ public class D05_ClassInfoDetail {
             System.out.println(method.getName());
         }
         // 获取所有方法
+        // getReturnType 获取方法返回类型
+        // getParameterType 获取参数类型
         System.out.println("6. 本类所有方法:");
         Method[] allMethods = personCls.getDeclaredMethods();
         for (Method method : allMethods) {
-            System.out.println(method.getName());
+            System.out.println(method.getReturnType() +"-"+ method.getName());
+            System.out.println("  --参数类型--");
+            Class<?>[] parameterTypes = method.getParameterTypes();
+            for (Class<?> parameterType : parameterTypes) {
+                System.out.println(parameterType);
+            }
         }
         // 获取所有public修饰的本类构造器
         System.out.println("7. public修饰的构造器：");
@@ -76,7 +86,7 @@ class Person extends Parent implements A,B{
 
     private String name;
 
-    public String sex;
+    public static final String sex = "male";
 
     public String address;
 
@@ -93,7 +103,7 @@ class Person extends Parent implements A,B{
 
     private void m2() { }
 
-    protected String m3() {
+    protected String m3(int a,String b,Object o) {
         return "";
     }
 }
