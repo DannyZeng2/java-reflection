@@ -1,5 +1,7 @@
 package com.oocl;
 
+import com.oocl.entity.Cat;
+
 import java.lang.reflect.Field;
 
 /**
@@ -8,7 +10,7 @@ import java.lang.reflect.Field;
 public class D03_Method {
 
     public static void main(String[] args) throws Exception {
-        String classFullName = "com.oocl.Cat";
+        String classFullName = "com.oocl.entity.Cat";
         Class<?> cls = Class.forName(classFullName);
 
         System.out.println(cls);

@@ -1,4 +1,4 @@
-package com.oocl;
+package com.oocl.entity;
 
 public class Cat {
     public String name = "Meow";

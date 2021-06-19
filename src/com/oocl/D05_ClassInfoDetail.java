@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 public class D05_ClassInfoDetail {
 
     public static void main(String[] args) throws Exception {
-        Class personCls = Class.forName("com.oocl.Person");
+        Class personCls = Class.forName("com.oocl.entity.Person");
         // 获取全类名
         System.out.println("1. 全类名："+personCls.getName());
         // 获取简单类名
@@ -57,7 +57,7 @@ public class D05_ClassInfoDetail {
             System.out.println(constructor.getName());
         }
         // 获取本类所有构造器
-        System.out.println("8. public修饰的构造器：");
+        System.out.println("8. 本类所有构造器：");
         Constructor[] allConstructors = personCls.getDeclaredConstructors();
         for (Constructor constructor : allConstructors) {
             System.out.println(constructor.getName());
@@ -81,40 +81,6 @@ public class D05_ClassInfoDetail {
     }
 }
 
-@Deprecated
-class Person extends Parent implements A,B{
 
-    private String name;
 
-    public static final String sex = "male";
 
-    public String address;
-
-    protected int age;
-
-    public Person() {
-    }
-
-    private Person(String name) {
-        this.name = name;
-    }
-
-    public void m1() { }
-
-    private void m2() { }
-
-    protected String m3(int a,String b,Object o) {
-        return "";
-    }
-}
-
-@SuppressWarnings({})
-class Parent {
-    public String phone;
-
-    private String email;
-}
-
-interface A {}
-
-interface B {}

@@ -1,5 +1,7 @@
 package com.oocl;
 
+import com.oocl.entity.Cat;
+
 /**
  * 创建class的六种方式
  */
@@ -7,7 +9,7 @@ public class D04_CreateClass{
 
     public static void main(String[] args) throws Exception {
         // 1. Class.forName() 应用场景：多用于配置文件
-        Class cls1 = Class.forName("com.oocl.Cat");
+        Class cls1 = Class.forName("com.oocl.entity.Cat");
 
         // 2. 类名.class 应用场景：已知具体多类，性能最高，多用于参数传递
         Class<Cat> cls2 = Cat.class;
@@ -18,7 +20,7 @@ public class D04_CreateClass{
 
         // 4. 通过类加载器classLoader
         ClassLoader classLoader = cat.getClass().getClassLoader();
-        Class cls4 = classLoader.loadClass("com.oocl.Cat");
+        Class cls4 = classLoader.loadClass("com.oocl.entity.Cat");
 
         // cls1,2,3,4是同一个对象
         System.out.println(cls1.hashCode());

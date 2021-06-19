@@ -1,5 +1,7 @@
 package com.oocl;
 
+import com.oocl.entity.Cat;
+
 import java.lang.reflect.Method;
 
 /**
@@ -26,7 +28,7 @@ public class D02_EfficiencyComparison {
 
     // 反射方式调用效率
     public static void m2() throws Exception {
-        Class cls = Class.forName("com.oocl.Cat");
+        Class cls = Class.forName("com.oocl.entity.Cat");
         Object cat = cls.newInstance();
         Method add = cls.getMethod("add");
 
@@ -40,7 +42,7 @@ public class D02_EfficiencyComparison {
 
     // 反射方式调用优化，关闭访问检查
     public static void m3() throws Exception {
-        Class cls = Class.forName("com.oocl.Cat");
+        Class cls = Class.forName("com.oocl.entity.Cat");
         Object cat = cls.newInstance();
         Method add = cls.getMethod("add");
         add.setAccessible(true);
